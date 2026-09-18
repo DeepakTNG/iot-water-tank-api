@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Head, usePage } from '@inertiajs/vue3';
+import { Head, Link, usePage } from '@inertiajs/vue3';
+import { privacyPolicy, termsOfService } from '@/routes';
 import { redirect as googleRedirect } from '@/routes/auth/google';
 
 const page = usePage<{ errors: Record<string, string> }>();
@@ -22,6 +23,11 @@ const page = usePage<{ errors: Record<string, string> }>();
                 </a>
                 <small v-if="page.props.errors.email">{{ page.props.errors.email }}</small>
                 <p class="login-note">Only approved Google accounts can access this control room.</p>
+                <div class="login-legal">
+                    <Link :href="privacyPolicy.url()">Privacy Policy</Link>
+                    <span>&bull;</span>
+                    <Link :href="termsOfService.url()">Terms of Service</Link>
+                </div>
             </div>
         </section>
 

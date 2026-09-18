@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/devices')->name('home');
 
+Route::inertia('/privacy-policy', 'PrivacyPolicy')->name('privacy-policy');
+Route::inertia('/terms-of-service', 'TermsOfService')->name('terms-of-service');
+Route::redirect('/privacy', '/privacy-policy');
+Route::redirect('/terms', '/terms-of-service');
+
 Route::middleware('guest')->group(function (): void {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::get('/auth/google/redirect', [AuthenticatedSessionController::class, 'redirectToGoogle'])

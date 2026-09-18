@@ -27,12 +27,19 @@
     "file": "assets/instrument-sans-600-normal-B9e8oLYv.woff",
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
+  "_routes-CPoh3BHi.js": {
+    "file": "assets/routes-CPoh3BHi.js",
+    "name": "routes",
+    "imports": [
+      "_wayfinder-Dp7PqxvV.js"
+    ]
+  },
   "_wayfinder-Dp7PqxvV.js": {
     "file": "assets/wayfinder-Dp7PqxvV.js",
     "name": "wayfinder"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DXmDaQ4Z.css",
+    "file": "assets/app-D5HUN7I-.css",
     "name": "app",
     "names": [
       "app.css"
@@ -41,28 +48,31 @@
     "isEntry": true
   },
   "resources/js/app.ts": {
-    "file": "assets/app-DuiIY0J8.js",
+    "file": "assets/app-BxBspqNt.js",
     "name": "app",
     "src": "resources/js/app.ts",
     "isEntry": true,
     "dynamicImports": [
       "resources/js/pages/Auth/Login.vue",
       "resources/js/pages/Devices/Index.vue",
+      "resources/js/pages/PrivacyPolicy.vue",
+      "resources/js/pages/TermsOfService.vue",
       "resources/js/pages/Welcome.vue"
     ]
   },
   "resources/js/pages/Auth/Login.vue": {
-    "file": "assets/Login-FAvNveBB.js",
+    "file": "assets/Login-CK1-7jJ-.js",
     "name": "Login",
     "src": "resources/js/pages/Auth/Login.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.ts",
-      "_wayfinder-Dp7PqxvV.js"
+      "_wayfinder-Dp7PqxvV.js",
+      "_routes-CPoh3BHi.js"
     ]
   },
   "resources/js/pages/Devices/Index.vue": {
-    "file": "assets/Index-_lNiWQ2_.js",
+    "file": "assets/Index-DU4QEOOa.js",
     "name": "Index",
     "src": "resources/js/pages/Devices/Index.vue",
     "isDynamicEntry": true,
@@ -71,8 +81,28 @@
       "_wayfinder-Dp7PqxvV.js"
     ]
   },
+  "resources/js/pages/PrivacyPolicy.vue": {
+    "file": "assets/PrivacyPolicy-BWXJF5Jz.js",
+    "name": "PrivacyPolicy",
+    "src": "resources/js/pages/PrivacyPolicy.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.ts",
+      "_routes-CPoh3BHi.js"
+    ]
+  },
+  "resources/js/pages/TermsOfService.vue": {
+    "file": "assets/TermsOfService-BAsf6db2.js",
+    "name": "TermsOfService",
+    "src": "resources/js/pages/TermsOfService.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.ts",
+      "_routes-CPoh3BHi.js"
+    ]
+  },
   "resources/js/pages/Welcome.vue": {
-    "file": "assets/Welcome-jHn2GXmw.js",
+    "file": "assets/Welcome-Ce5K_Ejj.js",
     "name": "Welcome",
     "src": "resources/js/pages/Welcome.vue",
     "isDynamicEntry": true,
