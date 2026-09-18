@@ -27,7 +27,7 @@ function payloadPreview(payload: Record<string, unknown>): string {
 
     <main class="dashboard-shell">
         <header class="topbar">
-            <Link :href="index.url()" class="wordmark"><span>WT</span> Waterline</Link>
+            <Link :href="index.url()" class="wordmark"><span>WT</span>Next Gen IoT</Link>
             <div class="operator-menu">
                 <span>{{ page.props.auth.user.name }}</span>
                 <Form v-bind="logout.form()">

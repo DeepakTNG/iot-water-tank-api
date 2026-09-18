@@ -11,8 +11,8 @@ const page = usePage<{ errors: Record<string, string> }>();
 
     <main class="login-shell">
         <section class="login-panel">
-            <div class="brand-mark">WT</div>
-            <p class="eyebrow">Water tank operations</p>
+            <div class="brand-mark">NGI</div>
+            <p class="eyebrow">Next Gen IoT</p>
             <h1>Sign in to your control room.</h1>
             <p class="lede">Manage connected devices and keep a clear eye on the latest readings.</p>
 

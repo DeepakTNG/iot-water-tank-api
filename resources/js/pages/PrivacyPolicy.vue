@@ -9,7 +9,7 @@ import { home, termsOfService } from '@/routes';
 
         <header class="topbar">
             <Link :href="home.url()" class="wordmark">
-                <span>WT</span> Waterline
+                <span>NGI</span> Next Gen IoT
             </Link>
             <nav class="operator-menu">
                 <Link :href="termsOfService.url()" class="text-button">
@@ -23,7 +23,7 @@ import { home, termsOfService } from '@/routes';
 
         <div class="legal-content">
             <Link :href="home.url()" class="legal-nav-link">
-                &larr; Return to Waterline
+                &larr; Return to Next Gen IOT
             </Link>
 
             <article class="legal-card">
@@ -34,7 +34,7 @@ import { home, termsOfService } from '@/routes';
                 <section class="legal-section">
                     <h2>1. Introduction</h2>
                     <p>
-                        Waterline ("we", "our", or "us") provides private IoT water tank monitoring and management software.
+                        Next Gen IOT ("we", "our", or "us") provides private IoT water tank monitoring and management software.
                         This Privacy Policy explains how we collect, use, and safeguard information when you use our web application,
                         device APIs, and related services.
                     </p>

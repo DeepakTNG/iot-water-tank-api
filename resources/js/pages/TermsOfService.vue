@@ -9,7 +9,7 @@ import { home, privacyPolicy } from '@/routes';
 
         <header class="topbar">
             <Link :href="home.url()" class="wordmark">
-                <span>WT</span> Waterline
+                <span>NGI</span> Next Gen IOT
             </Link>
             <nav class="operator-menu">
                 <Link :href="privacyPolicy.url()" class="text-button">
@@ -23,7 +23,7 @@ import { home, privacyPolicy } from '@/routes';
 
         <div class="legal-content">
             <Link :href="home.url()" class="legal-nav-link">
-                &larr; Return to Waterline
+                &larr; Return to Next Gen IoT
             </Link>
 
             <article class="legal-card">
@@ -34,7 +34,7 @@ import { home, privacyPolicy } from '@/routes';
                 <section class="legal-section">
                     <h2>1. Acceptance of Terms</h2>
                     <p>
-                        By accessing or using the Waterline IoT water tank monitoring platform ("Service"), you agree to be bound by these
+                        By accessing or using the `Next Gen IoT` IoT water tank monitoring platform ("Service"), you agree to be bound by these
                         Terms of Service. If you do not agree to these terms, you must not access or use the Service.
                     </p>
                 </section>
@@ -42,7 +42,7 @@ import { home, privacyPolicy } from '@/routes';
                 <section class="legal-section">
                     <h2>2. Authorized Operators & Authentication</h2>
                     <p>
-                        Access to the Waterline dashboard is restricted to designated operators. Authentication is performed via Google OAuth.
+                        Access to the `Next Gen IoT` dashboard is restricted to designated operators. Authentication is performed via Google OAuth.
                         You agree to:
                     </p>
                     <ul>
@@ -55,12 +55,12 @@ import { home, privacyPolicy } from '@/routes';
                 <section class="legal-section">
                     <h2>3. Hardware Provisioning & Token Security</h2>
                     <p>
-                        Waterline allows operators to provision hardware devices and issue API access tokens for transmitting sensor data:
+                        `Next Gen IoT` allows operators to provision hardware devices and issue API access tokens for transmitting sensor data:
                     </p>
                     <ul>
                         <li>Hardware tokens are generated once and must be stored securely within device firmware or environment variables.</li>
                         <li>You are responsible for all sensor readings and API activities conducted using tokens issued to your account.</li>
-                        <li>If a device or token is compromised, you must immediately revoke the device from the Waterline dashboard.</li>
+                        <li>If a device or token is compromised, you must immediately revoke the device from the `Next Gen IoT` dashboard.</li>
                     </ul>
                 </section>
 
@@ -80,7 +80,7 @@ import { home, privacyPolicy } from '@/routes';
                 <section class="legal-section">
                     <h2>5. Disclaimer of Warranties</h2>
                     <p>
-                        The Service is provided on an "AS IS" and "AS AVAILABLE" basis. While Waterline is built for reliability,
+                        The Service is provided on an "AS IS" and "AS AVAILABLE" basis. While `Next Gen IoT` is built for reliability,
                         we do not warrant that tank telemetry, network connectivity, or sensor signals will be uninterrupted, error-free,
                         or suitable as a sole safety fail-safe for critical physical systems without proper mechanical backups.
                     </p>
@@ -89,7 +89,7 @@ import { home, privacyPolicy } from '@/routes';
                 <section class="legal-section">
                     <h2>6. Limitation of Liability</h2>
                     <p>
-                        To the maximum extent permitted by applicable law, Waterline and its operators shall not be liable for any indirect,
+                        To the maximum extent permitted by applicable law, `Next Gen IoT` and its operators shall not be liable for any indirect,
                         incidental, special, consequential, or punitive damages arising from the use or inability to use the Service or
                         connected IoT hardware.
                     </p>

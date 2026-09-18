@@ -39,7 +39,7 @@
     "name": "wayfinder"
   },
   "resources/css/app.css": {
-    "file": "assets/app-D5HUN7I-.css",
+    "file": "assets/app-BmcCe38W.css",
     "name": "app",
     "names": [
       "app.css"
@@ -48,7 +48,7 @@
     "isEntry": true
   },
   "resources/js/app.ts": {
-    "file": "assets/app-BxBspqNt.js",
+    "file": "assets/app-BQvyefxU.js",
     "name": "app",
     "src": "resources/js/app.ts",
     "isEntry": true,
@@ -61,7 +61,7 @@
     ]
   },
   "resources/js/pages/Auth/Login.vue": {
-    "file": "assets/Login-CK1-7jJ-.js",
+    "file": "assets/Login-BwcQOuLC.js",
     "name": "Login",
     "src": "resources/js/pages/Auth/Login.vue",
     "isDynamicEntry": true,
@@ -72,7 +72,7 @@
     ]
   },
   "resources/js/pages/Devices/Index.vue": {
-    "file": "assets/Index-DU4QEOOa.js",
+    "file": "assets/Index-BJieM6MX.js",
     "name": "Index",
     "src": "resources/js/pages/Devices/Index.vue",
     "isDynamicEntry": true,
@@ -82,7 +82,7 @@
     ]
   },
   "resources/js/pages/PrivacyPolicy.vue": {
-    "file": "assets/PrivacyPolicy-BWXJF5Jz.js",
+    "file": "assets/PrivacyPolicy-t7AR-nNC.js",
     "name": "PrivacyPolicy",
     "src": "resources/js/pages/PrivacyPolicy.vue",
     "isDynamicEntry": true,
@@ -92,7 +92,7 @@
     ]
   },
   "resources/js/pages/TermsOfService.vue": {
-    "file": "assets/TermsOfService-BAsf6db2.js",
+    "file": "assets/TermsOfService-BcYWYqDI.js",
     "name": "TermsOfService",
     "src": "resources/js/pages/TermsOfService.vue",
     "isDynamicEntry": true,
@@ -102,7 +102,7 @@
     ]
   },
   "resources/js/pages/Welcome.vue": {
-    "file": "assets/Welcome-Ce5K_Ejj.js",
+    "file": "assets/Welcome-CKx9OfKa.js",
     "name": "Welcome",
     "src": "resources/js/pages/Welcome.vue",
     "isDynamicEntry": true,
