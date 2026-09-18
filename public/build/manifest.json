@@ -32,7 +32,7 @@
     "name": "wayfinder"
   },
   "resources/css/app.css": {
-    "file": "assets/app--40IRK1i.css",
+    "file": "assets/app-DXmDaQ4Z.css",
     "name": "app",
     "names": [
       "app.css"
@@ -41,7 +41,7 @@
     "isEntry": true
   },
   "resources/js/app.ts": {
-    "file": "assets/app-Ds4r_zvX.js",
+    "file": "assets/app-DuiIY0J8.js",
     "name": "app",
     "src": "resources/js/app.ts",
     "isEntry": true,
@@ -52,7 +52,7 @@
     ]
   },
   "resources/js/pages/Auth/Login.vue": {
-    "file": "assets/Login-B92adndc.js",
+    "file": "assets/Login-FAvNveBB.js",
     "name": "Login",
     "src": "resources/js/pages/Auth/Login.vue",
     "isDynamicEntry": true,
@@ -62,7 +62,7 @@
     ]
   },
   "resources/js/pages/Devices/Index.vue": {
-    "file": "assets/Index-BjStTw6S.js",
+    "file": "assets/Index-_lNiWQ2_.js",
     "name": "Index",
     "src": "resources/js/pages/Devices/Index.vue",
     "isDynamicEntry": true,
@@ -72,7 +72,7 @@
     ]
   },
   "resources/js/pages/Welcome.vue": {
-    "file": "assets/Welcome-6qm2D9d0.js",
+    "file": "assets/Welcome-jHn2GXmw.js",
     "name": "Welcome",
     "src": "resources/js/pages/Welcome.vue",
     "isDynamicEntry": true,

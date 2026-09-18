@@ -8,9 +8,12 @@ Route::redirect('/', '/devices')->name('home');
 
 Route::middleware('guest')->group(function (): void {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
-    Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+    Route::get('/auth/google/redirect', [AuthenticatedSessionController::class, 'redirectToGoogle'])
         ->middleware('throttle:login')
-        ->name('login.store');
+        ->name('auth.google.redirect');
+    Route::get('/auth/google/callback', [AuthenticatedSessionController::class, 'handleGoogleCallback'])
+        ->middleware('throttle:login')
+        ->name('auth.google.callback');
 });
 
 Route::middleware('auth')->group(function (): void {

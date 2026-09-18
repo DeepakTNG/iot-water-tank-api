@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response as InertiaResponse;
+use Laravel\Socialite\Facades\Socialite;
+use Laravel\Socialite\Two\User as GoogleSocialiteUser;
+use Symfony\Component\HttpFoundation\RedirectResponse as SymfonyRedirectResponse;
+use Throwable;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -16,9 +21,51 @@ class AuthenticatedSessionController extends Controller
         return Inertia::render('Auth/Login');
     }
 
-    public function store(LoginRequest $request): RedirectResponse
+    public function redirectToGoogle(): SymfonyRedirectResponse
     {
-        $request->authenticate();
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback(Request $request): RedirectResponse
+    {
+        if ($request->filled('error')) {
+            return redirect()->route('login')->withErrors(['email' => 'Google sign-in was cancelled.']);
+        }
+
+        try {
+            $googleUser = Socialite::driver('google')->user();
+        } catch (Throwable $exception) {
+            report($exception);
+
+            return redirect()->route('login')->withErrors(['email' => 'Google sign-in could not be completed.']);
+        }
+
+        if (! $googleUser instanceof GoogleSocialiteUser) {
+            return redirect()->route('login')->withErrors(['email' => 'Google sign-in could not be completed.']);
+        }
+
+        $email = strtolower(trim((string) $googleUser->getEmail()));
+        $rawProfile = $googleUser->user;
+
+        if ($email === '' || ($rawProfile['email_verified'] ?? false) !== true) {
+            return redirect()->route('login')->withErrors(['email' => 'This Google account is not authorized.']);
+        }
+
+        $user = User::query()->where('email', $email)->first();
+
+        if ($user === null || ($user->google_id !== null && $user->google_id !== $googleUser->getId())) {
+            return redirect()->route('login')->withErrors(['email' => 'This Google account is not authorized.']);
+        }
+
+        $linkedUser = User::query()->where('google_id', $googleUser->getId())->first();
+
+        if ($linkedUser !== null && $linkedUser->isNot($user)) {
+            return redirect()->route('login')->withErrors(['email' => 'This Google account is not authorized.']);
+        }
+
+        $user->forceFill(['google_id' => $googleUser->getId()])->save();
+        Auth::login($user);
+        $request->session()->regenerate();
 
         return redirect()->intended(route('devices.index'));
     }
