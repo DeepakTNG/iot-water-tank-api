@@ -6,6 +6,9 @@ return [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URI'),
+        'guzzle' => array_filter([
+            'verify' => env('GOOGLE_GUZZLE_VERIFY', file_exists('C:/tools/cacert.pem') ? 'C:/tools/cacert.pem' : true),
+        ], fn ($val): bool => $val !== null),
     ],
 
     /*

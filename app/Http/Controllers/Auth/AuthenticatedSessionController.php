@@ -46,14 +46,16 @@ class AuthenticatedSessionController extends Controller
 
         $email = strtolower(trim((string) $googleUser->getEmail()));
         $rawProfile = $googleUser->user;
+        $isVerified = filter_var($rawProfile['email_verified'] ?? $rawProfile['verified_email'] ?? false, FILTER_VALIDATE_BOOLEAN);
 
-        if ($email === '' || ($rawProfile['email_verified'] ?? false) !== true) {
+        if ($email === '' || ! $isVerified) {
             return redirect()->route('login')->withErrors(['email' => 'This Google account is not authorized.']);
         }
 
         $user = User::query()->where('email', $email)->first();
+        $isUnlinkedOrEmail = $user !== null && ($user->google_id === null || $user->google_id === $email);
 
-        if ($user === null || ($user->google_id !== null && $user->google_id !== $googleUser->getId())) {
+        if ($user === null || (! $isUnlinkedOrEmail && $user->google_id !== $googleUser->getId())) {
             return redirect()->route('login')->withErrors(['email' => 'This Google account is not authorized.']);
         }
 

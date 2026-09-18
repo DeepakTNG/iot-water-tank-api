@@ -103,3 +103,40 @@ test('operators cannot revoke another users device', function () {
         ->delete(route('devices.destroy', $device))
         ->assertNotFound();
 });
+
+test('an approved Google account with google_id previously set to its email can link cleanly', function () {
+    $user = User::factory()->create([
+        'email' => 'developer.tng@gmail.com',
+        'google_id' => 'developer.tng@gmail.com',
+    ]);
+
+    Socialite::fake('google', GoogleUser::fake([
+        'id' => 'google-sub-real-numeric-id',
+        'email' => $user->email,
+        'email_verified' => true,
+    ]));
+
+    $this->get('/auth/google/callback')->assertRedirect('/devices');
+    expect($user->fresh()->google_id)->toBe('google-sub-real-numeric-id');
+});
+
+test('user:authorize command authorizes new and existing operators', function () {
+    $this->artisan('user:authorize newoperator@gmail.com --name="New Operator"')
+        ->assertSuccessful();
+
+    $this->assertDatabaseHas('users', [
+        'email' => 'newoperator@gmail.com',
+        'name' => 'New Operator',
+        'google_id' => null,
+    ]);
+
+    $existing = User::factory()->create([
+        'email' => 'seeded@gmail.com',
+        'google_id' => 'seeded@gmail.com',
+    ]);
+
+    $this->artisan('user:authorize seeded@gmail.com')
+        ->assertSuccessful();
+
+    expect($existing->fresh()->google_id)->toBeNull();
+});
